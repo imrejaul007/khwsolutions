@@ -23,6 +23,21 @@ export default function PalmThatchPage() {
 
   return (
     <>
+      {/* Splash label fixed on left side */}
+      <img
+        src="/images/thatch/palm-thatch-splash.png"
+        alt="Product Info"
+        style={{
+          position: "fixed",
+          left: 0,
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: "clamp(60px, 8vw, 100px)",
+          height: "auto",
+          zIndex: 100,
+        }}
+      />
+
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section style={{ display: "grid", gridTemplateColumns: "55% 45%", minHeight: "90vh" }}>
         <div style={{ position: "relative", background: "var(--ink)" }}>
@@ -30,19 +45,6 @@ export default function PalmThatchPage() {
             src="/images/thatch/palm-thatch-hero.png"
             alt="Exotic Palm Thatch"
             style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.9 }}
-          />
-          {/* Splash label in bottom left */}
-          <img
-            src="/images/thatch/palm-thatch-splash.png"
-            alt="Product Info"
-            style={{
-              position: "absolute",
-              bottom: "2rem",
-              left: "2rem",
-              width: "clamp(150px, 15vw, 200px)",
-              height: "auto",
-              zIndex: 10,
-            }}
           />
           <div style={{
             position: "absolute",

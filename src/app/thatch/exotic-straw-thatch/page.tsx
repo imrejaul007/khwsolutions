@@ -351,7 +351,7 @@ export default function StrawThatchPage() {
                 <div style={{ background: "var(--white)", overflow: "hidden" }}>
                   <div style={{ aspectRatio: "16/10", overflow: "hidden", background: "var(--cream)" }}>
                     <img
-                      src={`/images/thatch/${p.id.replace("exotic-", "")}-splash.png`}
+                      src="/images/thatch/KHW Exotic Reed Thatch.jpeg"
                       alt={p.name}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       onError={(e) => {

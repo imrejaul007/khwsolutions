@@ -318,7 +318,7 @@ export default function ReedThatchPage() {
               <Link key={p.id} href={`/thatch/${p.id}`} style={{ display: "block", textDecoration: "none" }}>
                 <div style={{ background: "var(--white)", overflow: "hidden" }}>
                   <div style={{ aspectRatio: "16/10", overflow: "hidden", background: "var(--cream)" }}>
-                    <img src={`/images/thatch/${p.id.replace("exotic-", "")}-splash.png`} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}/>
+                    <img src="/images/thatch/Exotic Straw Thatch.jpeg" alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}/>
                   </div>
                   <div style={{ padding: "1.5rem" }}>
                     <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1rem", fontWeight: 700, color: "var(--ink)", marginBottom: "0.375rem" }}>{p.name}</h3>

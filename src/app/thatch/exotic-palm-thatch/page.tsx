@@ -851,7 +851,7 @@ export default function PalmThatchPage() {
                     }}
                   >
                     <img
-                      src={`/images/thatch/${p.id.replace("exotic-", "").replace("folding-", "")}-splash.png`}
+                      src="/images/thatch/palm-thatch-hero.png"
                       alt={p.name}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       onError={(e) => {

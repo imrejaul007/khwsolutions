@@ -79,7 +79,7 @@ export default function ThatchPage() {
         {/* Full-bleed background image */}
         <div style={{ position: "absolute", inset: 0 }}>
           <img
-            src="/images/thatch/cover-1.png"
+            src="/images/thatch/thatch-hero-new.jpeg"
             alt="Synthetic thatch cover"
             style={{
               width: "100%",

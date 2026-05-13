@@ -3,10 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { products } from "@/data/products";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { InstallationGuide } from "@/components/InstallationGuide";
-import { InteractiveColorSwatch, ExpandablePanel } from "@/components/InteractiveElements";
+import { InteractiveColorSwatch } from "@/components/InteractiveElements";
 
 export default function PalmThatchPage() {
   const thatch = products.find((p) => p.id === "synthetic-thatch");
@@ -14,8 +13,20 @@ export default function PalmThatchPage() {
   if (!product) return null;
 
   const relatedProducts = thatch?.subProducts.filter((p) => p.id !== "exotic-palm-thatch") ?? [];
+
+  // Variant state (Without Rails / With Rails)
+  const [selectedVariant, setSelectedVariant] = useState<"without" | "with">("without");
+
+  // Color state
   const [selectedColorIdx, setSelectedColorIdx] = useState(0);
   const selectedColor = product.colors[selectedColorIdx];
+
+  // Get image based on variant and color
+  const getImageSrc = () => {
+    const variantSuffix = selectedVariant === "with" ? "-with-rails" : "-without-rails";
+    const colorName = selectedColor.name.toLowerCase().replace(" ", "-");
+    return `/images/thatch/palm-thatch${variantSuffix}-${colorName}.png`;
+  };
 
   return (
     <>
@@ -27,8 +38,8 @@ export default function PalmThatchPage() {
         {/* Left: Image */}
         <div style={{ position: "relative", overflow: "hidden" }}>
           <img
-            src="/images/thatch/palm-thatch-hero.png"
-            alt="Exotic Palm Thatch"
+            src={getImageSrc()}
+            alt={`Exotic Palm Thatch - ${selectedVariant === "with" ? "With Rails" : "Without Rails"} - ${selectedColor.name}`}
             style={{
               width: "100%",
               height: "100%",
@@ -147,12 +158,69 @@ export default function PalmThatchPage() {
               fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
               fontWeight: 400,
               color: "var(--ink-muted)",
-              marginBottom: "2.5rem",
+              marginBottom: "2rem",
               lineHeight: 1.7,
             }}
           >
-            {product.description}
+            Designed to replicate the rich, tropical appearance of natural dried palm that mimics traditional island-style roofing.
           </p>
+
+          {/* Variant selector */}
+          <div style={{ marginBottom: "2rem" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "0.5625rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                color: "var(--ink-muted)",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Choose Installation Type
+            </div>
+            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+              <button
+                onClick={() => setSelectedVariant("without")}
+                style={{
+                  flex: "1 1 250px",
+                  padding: "1rem 1.25rem",
+                  background: selectedVariant === "without" ? "var(--forest-pale)" : "var(--white)",
+                  border: `2px solid ${selectedVariant === "without" ? "var(--forest-mid)" : "var(--cream-dark)"}`,
+                  cursor: "pointer",
+                  textAlign: "left",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.75rem", fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", marginBottom: "0.375rem" }}>
+                  Without Rails
+                </div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--ink-muted)", lineHeight: 1.5 }}>
+                  Installed on fiber cement board, OSB, corrugated metal, marine plywood, concrete
+                </div>
+              </button>
+              <button
+                onClick={() => setSelectedVariant("with")}
+                style={{
+                  flex: "1 1 250px",
+                  padding: "1rem 1.25rem",
+                  background: selectedVariant === "with" ? "var(--forest-pale)" : "var(--white)",
+                  border: `2px solid ${selectedVariant === "with" ? "var(--forest-mid)" : "var(--cream-dark)"}`,
+                  cursor: "pointer",
+                  textAlign: "left",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.75rem", fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", marginBottom: "0.375rem" }}>
+                  With Rails
+                </div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--ink-muted)", lineHeight: 1.5 }}>
+                  Installed on vertical rafters at 50cm spacing — exposed underside balinese view
+                </div>
+              </button>
+            </div>
+          </div>
 
           {/* Color swatches — interactive */}
           <div style={{ marginBottom: "2rem" }}>

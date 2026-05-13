@@ -327,7 +327,7 @@ export default function ThatchPage() {
                       lineHeight: 1.6,
                       marginBottom: "1.25rem",
                     }}>
-                      HDPE-based palm leaf texture. 100% waterproof — no sub-deck needed.
+                      Designed to replicate the rich, tropical appearance of natural dried palm that mimics traditional island-style roofing.
                     </p>
                     {/* Sub-types: With / Without */}
                     <div style={{
@@ -338,8 +338,8 @@ export default function ThatchPage() {
                       borderTop: "1px solid var(--cream-dark)",
                     }}>
                       {[
-                        { name: "With", desc: "With backing/netting support", color: "var(--forest-mid)" },
-                        { name: "Without", desc: "Without backing — traditional look", color: "var(--forest-mid)" },
+                        { name: "Without Rails", desc: "Installed on fiber cement board, OSB, corrugated metal, marine plywood, concrete" },
+                        { name: "With Rails", desc: "Installed on vertical rafters at 50cm spacing — gives exposed underside balinese view" },
                       ].map((sub) => (
                         <div key={sub.name} style={{
                           display: "flex",
@@ -464,7 +464,7 @@ export default function ThatchPage() {
                       lineHeight: 1.6,
                       marginBottom: "1.25rem",
                     }}>
-                      Mexican Palapas inspired design. Long-lasting with fire-resistant construction.
+                      The right mix of traditional style and modern durability. It has a rustic-vernacular look.
                     </p>
                     {/* Sub-types: Indoor / Outdoor */}
                     <div style={{
@@ -475,8 +475,8 @@ export default function ThatchPage() {
                       borderTop: "1px solid var(--cream-dark)",
                     }}>
                       {[
-                        { name: "Indoor", desc: "Decorative ceiling & accent walls", color: "var(--gold)" },
-                        { name: "Outdoor", desc: "Full exposure weatherproof roofing", color: "var(--gold)" },
+                        { name: "Outdoor", desc: "Installed on fiber cement board, OSB, corrugated metal, plywood, concrete" },
+                        { name: "Indoor", desc: "Used as false ceiling, wall panel, and other decor purposes" },
                       ].map((sub) => (
                         <div key={sub.name} style={{
                           display: "flex",

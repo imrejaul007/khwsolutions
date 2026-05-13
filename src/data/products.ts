@@ -127,15 +127,10 @@ export const products: ProductCategory[] = [
             description: "Deep rich brown with natural weathering",
             hex: "#7B5A2D",
           },
-          {
-            name: "Weathered",
-            description: "Light grey-brown with wind-weathered texture",
-            hex: "#9B8B70",
-          },
         ],
         installations: [
           {
-            type: "Horizontal Battens",
+            type: "Without Rails",
             description:
               "Shingles are installed horizontally on wooden or metal battens, creating a traditional exposed underside ceiling look. The natural leaf texture is visible on the ceiling side — authentic tropical aesthetic.",
             beam: "Min. 100×100mm (4\"×4\")",

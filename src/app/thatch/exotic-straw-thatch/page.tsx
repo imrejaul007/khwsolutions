@@ -5,15 +5,26 @@ import Link from "next/link";
 import { products } from "@/data/products";
 import { Footer } from "@/components/Footer";
 import { InstallationGuide } from "@/components/InstallationGuide";
-import { InteractiveColorSwatch, ExpandablePanel } from "@/components/InteractiveElements";
+import { InteractiveColorSwatch } from "@/components/InteractiveElements";
 
 export default function StrawThatchPage() {
   const thatch = products.find((p) => p.id === "synthetic-thatch");
   const product = thatch?.subProducts.find((p) => p.id === "exotic-straw-thatch");
   if (!product) return null;
 
+  // Variant state (Indoor / Outdoor)
+  const [selectedVariant, setSelectedVariant] = useState<"outdoor" | "indoor">("outdoor");
+
+  // Color state
   const [selectedColorIdx, setSelectedColorIdx] = useState(0);
   const selectedColor = product.colors[selectedColorIdx];
+
+  // Get image based on variant and color
+  const getImageSrc = () => {
+    const variantSuffix = selectedVariant === "indoor" ? "-indoor" : "-outdoor";
+    const colorName = selectedColor.name.toLowerCase().replace(" ", "-");
+    return `/images/thatch/straw-thatch${variantSuffix}-${colorName}.png`;
+  };
 
   return (
     <>
@@ -21,8 +32,8 @@ export default function StrawThatchPage() {
       <section className="product-hero" style={{ background: "var(--bark)" }}>
         <div style={{ position: "relative", overflow: "hidden" }}>
           <img
-            src="/images/thatch/straw-thatch-splash.png"
-            alt="Exotic Straw Thatch"
+            src={getImageSrc()}
+            alt={`Exotic Straw Thatch - ${selectedVariant === "indoor" ? "Indoor" : "Outdoor"}`}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = "none";
@@ -50,9 +61,57 @@ export default function StrawThatchPage() {
             EXOTIC<br />STRAW<br />THATCH
           </h1>
           <div style={{ width: 40, height: 2, background: "var(--gold)", marginBottom: "1.5rem" }} />
-          <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)", fontWeight: 400, color: "var(--ink-muted)", marginBottom: "2.5rem", lineHeight: 1.7 }}>
-            {product.description}
+          <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)", fontWeight: 400, color: "var(--ink-muted)", marginBottom: "2rem", lineHeight: 1.7 }}>
+            The right mix of traditional style and modern durability. It has a rustic-vernacular look.
           </p>
+
+          {/* Variant selector */}
+          <div style={{ marginBottom: "2rem" }}>
+            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
+              Choose Application
+            </div>
+            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+              <button
+                onClick={() => setSelectedVariant("outdoor")}
+                style={{
+                  flex: "1 1 250px",
+                  padding: "1rem 1.25rem",
+                  background: selectedVariant === "outdoor" ? "var(--gold-pale)" : "var(--white)",
+                  border: `2px solid ${selectedVariant === "outdoor" ? "var(--gold)" : "var(--cream-dark)"}`,
+                  cursor: "pointer",
+                  textAlign: "left",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.75rem", fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", marginBottom: "0.375rem" }}>
+                  Outdoor
+                </div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--ink-muted)", lineHeight: 1.5 }}>
+                  Installed on fiber cement board, OSB, corrugated metal, plywood, concrete
+                </div>
+              </button>
+              <button
+                onClick={() => setSelectedVariant("indoor")}
+                style={{
+                  flex: "1 1 250px",
+                  padding: "1rem 1.25rem",
+                  background: selectedVariant === "indoor" ? "var(--gold-pale)" : "var(--white)",
+                  border: `2px solid ${selectedVariant === "indoor" ? "var(--gold)" : "var(--cream-dark)"}`,
+                  cursor: "pointer",
+                  textAlign: "left",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.75rem", fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", marginBottom: "0.375rem" }}>
+                  Indoor
+                </div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--ink-muted)", lineHeight: 1.5 }}>
+                  Used as false ceiling, wall panel, and other decor purposes
+                </div>
+              </button>
+            </div>
+          </div>
+
           <div style={{ marginBottom: "2rem" }}>
             <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
               Available Colors

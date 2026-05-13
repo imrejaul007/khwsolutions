@@ -5,7 +5,7 @@ import Link from "next/link";
 import { products } from "@/data/products";
 import { Footer } from "@/components/Footer";
 import { InstallationGuide } from "@/components/InstallationGuide";
-import { InteractiveColorSwatch, ExpandablePanel } from "@/components/InteractiveElements";
+import { InteractiveColorSwatch } from "@/components/InteractiveElements";
 
 export default function ReedThatchPage() {
   const thatch = products.find((p) => p.id === "synthetic-thatch");
@@ -14,6 +14,12 @@ export default function ReedThatchPage() {
 
   const [selectedColorIdx, setSelectedColorIdx] = useState(0);
   const selectedColor = product.colors[selectedColorIdx];
+
+  // Get image based on color
+  const getImageSrc = () => {
+    const colorName = selectedColor.name.toLowerCase().replace(" ", "-");
+    return `/images/thatch/reed-thatch-${colorName}.png`;
+  };
 
   const panelTypes = [
     {
@@ -54,8 +60,8 @@ export default function ReedThatchPage() {
       <section className="product-hero" style={{ background: "var(--bark)" }}>
         <div style={{ position: "relative", overflow: "hidden" }}>
           <img
-            src="/images/thatch/reed-thatch-splash.png"
-            alt="Exotic Reed Thatch"
+            src={getImageSrc()}
+            alt={`Exotic Reed Thatch - ${selectedColor.name}`}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
             onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).parentElement!.style.background = "#8b6342"; }}
           />
@@ -84,7 +90,7 @@ export default function ReedThatchPage() {
           <div style={{ width: 40, height: 2, background: "var(--gold)", marginBottom: "1.5rem" }}/>
 
           <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)", fontWeight: 400, color: "var(--ink-muted)", marginBottom: "2.5rem", lineHeight: 1.7 }}>
-            {product.description}
+            Luxurious synthetic reed thatch that reproduces the charm of natural water reed thatching. Reed strands at varied colors and lengths create a layered, voluminous appearance.
           </p>
 
           {/* Color selector — interactive */}

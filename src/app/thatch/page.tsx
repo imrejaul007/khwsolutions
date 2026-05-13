@@ -73,7 +73,7 @@ export default function ThatchPage() {
           flexDirection: "column",
           justifyContent: "space-between",
           overflow: "hidden",
-          background: "var(--forest)",
+          background: "#000",
         }}
       >
         {/* Full-bleed background image */}

@@ -217,18 +217,16 @@ export default function ReedThatchPage() {
             </div>
           </div>
 
-          <ExpandablePanel title="View All Installation Methods" defaultOpen={false}>
-            <InstallationGuide installations={product.installations} productName={product.name} />
-            {/* Important note */}
-            <div style={{ marginTop: "2rem", background: "var(--gold-pale)", borderLeft: "3px solid var(--gold)", padding: "1.5rem 2rem" }}>
-              <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.5rem" }}>
-                Key Difference from Palm Thatch
-              </div>
-              <p className="body-sm" style={{ color: "var(--ink-light)", lineHeight: 1.7 }}>
-                Unlike <Link href="/thatch/exotic-palm-thatch" style={{ color: "var(--forest-mid)", fontWeight: 600, textDecoration: "underline" }}>Exotic Palm Thatch</Link> which is independently waterproof, Reed Thatch requires a <strong>solid substrate</strong> (fiber cement board, corrugated metal, or plywood) with a <strong>waterproof membrane</strong> underneath.
-              </p>
+          <InstallationGuide installations={product.installations} productName={product.name} />
+          {/* Important note */}
+          <div style={{ marginTop: "2rem", background: "var(--gold-pale)", borderLeft: "3px solid var(--gold)", padding: "1.5rem 2rem" }}>
+            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.5rem" }}>
+              Key Difference from Palm Thatch
             </div>
-          </ExpandablePanel>
+            <p className="body-sm" style={{ color: "var(--ink-light)", lineHeight: 1.7 }}>
+              Unlike <Link href="/thatch/exotic-palm-thatch" style={{ color: "var(--forest-mid)", fontWeight: 600, textDecoration: "underline" }}>Exotic Palm Thatch</Link> which is independently waterproof, Reed Thatch requires a <strong>solid substrate</strong> (fiber cement board, corrugated metal, or plywood) with a <strong>waterproof membrane</strong> underneath.
+            </p>
+          </div>
         </div>
       </section>
 

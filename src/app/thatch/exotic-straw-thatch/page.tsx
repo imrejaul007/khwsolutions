@@ -224,9 +224,7 @@ export default function StrawThatchPage() {
               Straw Thatch requires a <strong style={{ color: "var(--bark-mid)" }}>solid substrate and waterproof membrane</strong> &mdash; essential for proper weather protection.
             </p>
           </div>
-          <ExpandablePanel title="View Installation Methods" defaultOpen={false}>
-            <InstallationGuide installations={product.installations} productName={product.name} />
-          </ExpandablePanel>
+          <InstallationGuide installations={product.installations} productName={product.name} />
         </div>
       </section>
 

@@ -449,9 +449,7 @@ export default function PalmThatchPage() {
             </p>
           </div>
 
-          <ExpandablePanel title="View All 5 Installation Methods" defaultOpen={false}>
-            <InstallationGuide installations={product.installations} productName={product.name} />
-          </ExpandablePanel>
+          <InstallationGuide installations={product.installations} productName={product.name} />
         </div>
       </section>
 

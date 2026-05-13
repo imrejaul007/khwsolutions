@@ -5,7 +5,7 @@ import Link from "next/link";
 import { products } from "@/data/products";
 import { Footer } from "@/components/Footer";
 import { InstallationGuide } from "@/components/InstallationGuide";
-import { InteractiveColorSwatch } from "@/components/InteractiveElements";
+import { InteractiveColorSwatch, ExpandablePanel } from "@/components/InteractiveElements";
 
 export default function ReedThatchPage() {
   const thatch = products.find((p) => p.id === "synthetic-thatch");

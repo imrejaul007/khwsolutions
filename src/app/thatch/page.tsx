@@ -451,6 +451,7 @@ export default function ThatchPage() {
             </Reveal>
 
           </div>
+        </div>
       </section>
 
       {/* ─── STICKY MINI NAV ─────────────────────────────────────────── */}

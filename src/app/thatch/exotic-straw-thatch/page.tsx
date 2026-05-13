@@ -21,11 +21,7 @@ export default function StrawThatchPage() {
 
   // Get image based on variant and color
   const getImageSrc = () => {
-    if (selectedVariant === "indoor") {
-      return "/images/thatch/straw-thatch-interior.jpeg";
-    }
-    const colorName = selectedColor.name.toLowerCase().replace(" ", "-");
-    return `/images/thatch/straw-thatch-outdoor-${colorName}.png`;
+    return "/images/thatch/straw-thatch-main.jpeg";
   };
 
   return (

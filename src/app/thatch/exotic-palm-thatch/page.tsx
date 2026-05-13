@@ -557,7 +557,7 @@ export default function PalmThatchPage() {
             </h2>
           </div>
 
-          <ExpandablePanel title="View Full Specifications & Dimensions" defaultOpen={true}>
+          
             <div className="split-2" style={{ gap: "clamp(2rem, 4vw, 4rem)" }}>
               {/* Specs list */}
               <div style={{ background: "var(--white)", padding: "clamp(2rem, 4vw, 3rem)" }}>
@@ -653,7 +653,7 @@ export default function PalmThatchPage() {
                 </div>
               </div>
             </div>
-          </ExpandablePanel>
+          
         </div>
       </section>
 

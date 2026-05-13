@@ -31,6 +31,19 @@ export default function PalmThatchPage() {
             alt="Exotic Palm Thatch"
             style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.9 }}
           />
+          {/* Cart label in top left */}
+          <img
+            src="/images/thatch/palm-thatch-splash.png"
+            alt="Product Info"
+            style={{
+              position: "absolute",
+              top: "2rem",
+              left: "2rem",
+              width: "clamp(150px, 15vw, 200px)",
+              height: "auto",
+              zIndex: 10,
+            }}
+          />
           <div style={{
             position: "absolute",
             bottom: "2rem",

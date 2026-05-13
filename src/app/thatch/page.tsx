@@ -411,7 +411,7 @@ export default function ThatchPage() {
                 }}>
                   <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden", background: "var(--cream-dark)" }}>
                     <img
-                      src="/images/thatch/straw-thatch-hero.png"
+                      src="/images/thatch/Exotic Straw Thatch.jpeg"
                       alt="Straw Thatch"
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       onError={(e) => {

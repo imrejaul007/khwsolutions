@@ -23,7 +23,7 @@ export default function PalmThatchPage() {
 
   // Get image based on variant and color
   const getImageSrc = () => {
-    return `/images/thatch/palm-thatch-main.jpeg`;
+    return `/images/thatch/palm-thatch-hero.png`;
   };
 
   return (

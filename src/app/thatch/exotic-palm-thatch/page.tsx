@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { products } from "@/data/products";
 import { Footer } from "@/components/Footer";
+import { InstallationGuide } from "@/components/InstallationGuide";
 
 export default function PalmThatchPage() {
   const thatch = products.find((p) => p.id === "synthetic-thatch");
@@ -517,169 +518,9 @@ export default function PalmThatchPage() {
       </section>
 
       {/* ─── INSTALLATION ───────────────────────────────────────────── */}
-      <section style={{ background: "var(--white)", padding: "clamp(4rem, 8vw, 8rem) 0" }}>
+      <section style={{ background: "var(--cream)", padding: "clamp(4rem, 8vw, 8rem) 0" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <div style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: "0.5625rem",
-              fontWeight: 700,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "var(--gold)",
-              marginBottom: "1rem",
-            }}>
-              Installation Guide
-            </div>
-            <h2 style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--ink)",
-              textTransform: "uppercase",
-            }}>
-              How To Install
-            </h2>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "2rem" }}>
-            {/* Step 1 */}
-            <div style={{ textAlign: "center", padding: "2rem" }}>
-              <div style={{
-                width: 60,
-                height: 60,
-                borderRadius: "50%",
-                background: "var(--forest)",
-                color: "var(--white)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "var(--font-heading)",
-                fontSize: "1.5rem",
-                fontWeight: 700,
-                margin: "0 auto 1.5rem",
-              }}>
-                1
-              </div>
-              <h3 style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "1rem",
-                fontWeight: 700,
-                color: "var(--ink)",
-                textTransform: "uppercase",
-                marginBottom: "0.75rem",
-              }}>
-                Prepare Surface
-              </h3>
-              <p style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "0.875rem",
-                color: "var(--ink-muted)",
-                lineHeight: 1.6,
-              }}>
-                Ensure the surface is clean, dry, and structurally sound. For Without Rails, any flat surface works. For With Rails, install vertical rafters at 50cm spacing.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div style={{ textAlign: "center", padding: "2rem" }}>
-              <div style={{
-                width: 60,
-                height: 60,
-                borderRadius: "50%",
-                background: "var(--forest)",
-                color: "var(--white)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "var(--font-heading)",
-                fontSize: "1.5rem",
-                fontWeight: 700,
-                margin: "0 auto 1.5rem",
-              }}>
-                2
-              </div>
-              <h3 style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "1rem",
-                fontWeight: 700,
-                color: "var(--ink)",
-                textTransform: "uppercase",
-                marginBottom: "0.75rem",
-              }}>
-                Install Panels
-              </h3>
-              <p style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "0.875rem",
-                color: "var(--ink-muted)",
-                lineHeight: 1.6,
-              }}>
-                Start from the bottom and work upward. Overlap panels by 50-100mm to ensure complete coverage and water resistance.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div style={{ textAlign: "center", padding: "2rem" }}>
-              <div style={{
-                width: 60,
-                height: 60,
-                borderRadius: "50%",
-                background: "var(--forest)",
-                color: "var(--white)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "var(--font-heading)",
-                fontSize: "1.5rem",
-                fontWeight: 700,
-                margin: "0 auto 1.5rem",
-              }}>
-                3
-              </div>
-              <h3 style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "1rem",
-                fontWeight: 700,
-                color: "var(--ink)",
-                textTransform: "uppercase",
-                marginBottom: "0.75rem",
-              }}>
-                Secure & Finish
-              </h3>
-              <p style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "0.875rem",
-                color: "var(--ink-muted)",
-                lineHeight: 1.6,
-              }}>
-                Use stainless steel screws or nails. For With Rails, attach aluminium rails at seams. Trim edges for clean finish.
-              </p>
-            </div>
-          </div>
-
-          {/* Download Guide Button */}
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <a href="#" style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.75rem",
-              padding: "1rem 2rem",
-              background: "var(--gold)",
-              color: "var(--white)",
-              fontFamily: "var(--font-heading)",
-              fontSize: "0.75rem",
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              textDecoration: "none",
-            }}>
-              Download Installation Guide
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-              </svg>
-            </a>
-          </div>
+          <InstallationGuide installations={product.installations} productName={product.name} />
         </div>
       </section>
 

@@ -518,8 +518,56 @@ export default function PalmThatchPage() {
       </section>
 
       {/* ─── INSTALLATION ───────────────────────────────────────────── */}
-      <section style={{ background: "var(--cream)", padding: "clamp(4rem, 8vw, 8rem) 0" }}>
+      <section style={{ background: "var(--white)", padding: "clamp(4rem, 10vw, 10rem) 0" }} id="installation">
         <div className="container">
+          <div style={{ marginBottom: "clamp(2rem, 4vw, 4rem)" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "0.5625rem",
+                fontWeight: 700,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "var(--gold)",
+                marginBottom: "1rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.75rem",
+              }}
+            >
+              <span style={{ width: 24, height: 1, background: "var(--gold)", display: "block" }} />
+              Installation Guide
+            </div>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "clamp(2rem, 4vw, 4rem)",
+                fontWeight: 700,
+                color: "var(--ink)",
+                lineHeight: 0.9,
+                textTransform: "uppercase",
+                letterSpacing: "-0.01em",
+                marginBottom: "1rem",
+              }}
+            >
+              FIVE METHODS OF<br />
+              <span style={{ fontStyle: "italic", color: "var(--gold)" }}>Installation</span>
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "1.125rem",
+                color: "var(--ink-muted)",
+                maxWidth: 640,
+                lineHeight: 1.7,
+              }}
+            >
+              Palm Thatch is{" "}
+              <strong style={{ color: "var(--forest-mid)" }}>100% waterproof on its own</strong>
+              &mdash; no waterproof membrane is required for any installation.
+            </p>
+          </div>
+
           <InstallationGuide installations={product.installations} productName={product.name} />
         </div>
       </section>

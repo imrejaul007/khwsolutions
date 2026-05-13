@@ -383,58 +383,6 @@ export const products: ProductCategory[] = [
         fireRating: "Class A (with FR treatment)",
         badge: "Traditional Style",
       },
-      {
-        id: "folding-reed-shingles",
-        name: "Folding Reed Shingles",
-        shortName: "Folding Shingles",
-        description:
-          "Folding Reed Shingles are an innovative modular thatch system where each shingle features a pre-scored folding line, allowing it to fold around roof edges, ridges, and corners seamlessly. This creates a fully integrated thatch roof with minimal gaps and maximum weather protection.",
-        material: "High-Density Polyethylene (HDPE)",
-        panelSize: "1160 × 900mm (with folding line)",
-        coverage: "1 pc = 2.3 sqft",
-        colors: [
-          {
-            name: "Natural Reed",
-            description: "Light golden reed tones",
-            hex: "#D4B896",
-          },
-        ],
-        installations: [
-          {
-            type: "Modular Folding System",
-            description:
-              "Each shingle folds along its scored line, allowing it to wrap around structural edges and create a continuous thatch surface without gaps.",
-            battenSpacing: "Per manufacturer specification",
-            subDeck: "Solid substrate recommended",
-            waterMembrane: "Waterproof membrane recommended",
-            notes:
-              "The folding design eliminates the need for separate hip/ridge pieces. Shingles interlock and fold to cover all roof angles including ridges and hips.",
-          },
-        ],
-        specs: [
-          { label: "Material", value: "HDPE (High-Density Polyethylene)" },
-          { label: "Panel Size", value: "1160 × 900mm (45.7\" × 35.4\")" },
-          { label: "Coverage", value: "1 pc = 2.3 sqft" },
-          { label: "Design Feature", value: "Pre-scored folding line for edge wrapping" },
-          { label: "Fire Rating", value: "Class A option available" },
-          { label: "Waterproof", value: "Enhanced — minimal gaps due to folding design" },
-          { label: "Warranty", value: "20 years" },
-        ],
-        applications: [
-          "Roofs with complex angles",
-          "Gazebos with hips and ridges",
-          "Traditional hut structures",
-          "Rounded roof sections",
-        ],
-        features: [
-          "Pre-scored folding line for seamless edge coverage",
-          "Eliminates need for separate hip/ridge pieces",
-          "Minimal gaps between shingles",
-          "Enhanced waterproofing at roof edges",
-          "Clean, integrated roof appearance",
-        ],
-        warranty: "20 years",
-      },
     ],
   },
 

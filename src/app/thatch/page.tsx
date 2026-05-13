@@ -261,376 +261,196 @@ export default function ThatchPage() {
             </Reveal>
           </div>
 
-          {/* Three Type Cards */}
-          <StaggerContainer stagger={0.15}>
-            <div className="split-2--3" style={{ gap: "clamp(1.5rem, 3vw, 2.5rem)" }}>
-              {/* 1. PALM THATCH */}
-              <Reveal>
-                <div style={{
-                  background: "var(--white)",
-                  borderTop: "4px solid var(--forest-mid)",
-                  overflow: "hidden",
-                  boxShadow: "0 4px 20px rgba(26,21,16,0.08)",
-                }}>
-                  <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden", background: "var(--cream-dark)" }}>
-                    <img
-                      src="/images/thatch/palm-thatch-hero.png"
-                      alt="Palm Thatch"
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                    <div style={{
-                      position: "absolute",
-                      bottom: "0.75rem",
-                      left: "0.75rem",
-                      background: "var(--forest-mid)",
-                      color: "var(--white)",
-                      padding: "0.375rem 0.875rem",
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "0.5rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                    }}>
-                      Best Seller
-                    </div>
-                  </div>
-                  <div style={{ padding: "1.5rem" }}>
-                    <div style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "0.5rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      color: "var(--gold)",
-                      marginBottom: "0.5rem",
-                    }}>
+          {/* Product Range Cards - Reference Design */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "clamp(2rem, 4vw, 3rem)" }}>
+
+            {/* 01 / PALM THATCH */}
+            <Reveal>
+              <div id="exotic-palm-thatch" style={{ background: "var(--white)", borderRadius: 4, overflow: "hidden", boxShadow: "0 4px 24px rgba(26,21,16,0.08)" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 500 }}>
+                  {/* Left - Content */}
+                  <div style={{ padding: "clamp(2rem, 4vw, 3rem)" }}>
+                    <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.5rem" }}>
                       01 / Palm Thatch
                     </div>
-                    <h3 style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
-                      fontWeight: 700,
-                      color: "var(--ink)",
-                      marginBottom: "0.75rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "-0.01em",
-                    }}>
-                      KHW Exotic Palm Thatch
+                    <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "-0.02em", marginBottom: "1rem", lineHeight: 1.1 }}>
+                      Exotic Palm Thatch
                     </h3>
-                    <p style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "0.875rem",
-                      color: "var(--ink-muted)",
-                      lineHeight: 1.6,
-                      marginBottom: "1.25rem",
-                    }}>
-                      Designed to replicate the rich, tropical appearance of natural dried palm that mimics traditional island-style roofing.
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", color: "var(--ink-muted)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                      Designed to replicate the rich, tropical appearance of natural dried palm that mimics traditional island-style roofing. Perfect for resort applications.
                     </p>
-                    {/* Sub-types: With / Without */}
-                    <div style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "0.75rem",
-                      paddingTop: "1rem",
-                      borderTop: "1px solid var(--cream-dark)",
-                    }}>
-                      {[
-                        { name: "Without Rails", desc: "Installed on fiber cement board, OSB, corrugated metal, marine plywood, concrete" },
-                        { name: "With Rails", desc: "Installed on vertical rafters at 50cm spacing — gives exposed underside balinese view" },
-                      ].map((sub) => (
-                        <div key={sub.name} style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.75rem",
-                          padding: "0.75rem",
-                          background: "var(--cream)",
-                        }}>
-                          <div style={{
-                            width: 8,
-                            height: 8,
-                            background: sub.color,
-                            borderRadius: "50%",
-                            flexShrink: 0,
-                          }} />
-                          <div>
-                            <div style={{
-                              fontFamily: "var(--font-heading)",
-                              fontSize: "0.875rem",
-                              fontWeight: 700,
-                              color: "var(--ink)",
-                              textTransform: "uppercase",
-                            }}>
-                              {sub.name}
-                            </div>
-                            <div style={{
-                              fontFamily: "var(--font-heading)",
-                              fontSize: "0.6875rem",
-                              color: "var(--ink-muted)",
-                            }}>
-                              {sub.desc}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                    {/* Color Options */}
+                    <div style={{ marginBottom: "1.5rem" }}>
+                      <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
+                        Colors Available
+                      </div>
+                      <div style={{ display: "flex", gap: "0.5rem" }}>
+                        {["#8B7355", "#A0522D", "#654321", "#3D2B1F"].map((color, i) => (
+                          <div key={i} style={{ width: 32, height: 32, borderRadius: "50%", background: color, border: "2px solid var(--cream-dark)", cursor: "pointer" }} />
+                        ))}
+                      </div>
                     </div>
-                    <a
-                      href="#exotic-palm-thatch"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        marginTop: "1.25rem",
-                        fontFamily: "var(--font-heading)",
-                        fontSize: "0.6875rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        color: "var(--forest-mid)",
-                        textDecoration: "none",
-                      }}
-                    >
-                      View Products
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </a>
+                    {/* Specs */}
+                    <div style={{ marginBottom: "1.5rem" }}>
+                      <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
+                        Key Specifications
+                      </div>
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+                        {[["Panel Size", "1100 × 900mm"], ["Material", "HDPE"], ["Warranty", "20 years"], ["Fire Rating", "Class A"]].map(([k, v]) => (
+                          <div key={k} style={{ background: "var(--cream)", padding: "0.5rem 0.75rem" }}>
+                            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.4375rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink-muted)" }}>{k}</div>
+                            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.625rem", fontWeight: 700, color: "var(--ink)" }}>{v}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    {/* Buttons */}
+                    <div style={{ display: "flex", gap: "0.75rem" }}>
+                      <a href="/thatch/exotic-palm-thatch" style={{ flex: 1, padding: "0.875rem 1.5rem", background: "var(--ink)", color: "var(--white)", fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                        View Full Details
+                      </a>
+                      <a href="/contact" style={{ flex: 1, padding: "0.875rem 1.5rem", background: "var(--gold)", color: "var(--white)", fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                        Get Quote
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-
-              {/* 2. STRAW */}
-              <Reveal>
-                <div style={{
-                  background: "var(--white)",
-                  borderTop: "4px solid var(--gold)",
-                  overflow: "hidden",
-                  boxShadow: "0 4px 20px rgba(26,21,16,0.08)",
-                }}>
-                  <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden", background: "var(--cream-dark)" }}>
+                  {/* Right - Image */}
+                  <div style={{ position: "relative", background: "var(--cream)" }}>
                     <img
                       src="/images/thatch/Exotic Straw Thatch.jpeg"
-                      alt="Straw Thatch"
+                      alt="Exotic Palm Thatch"
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
                     />
-                    <div style={{
-                      position: "absolute",
-                      bottom: "0.75rem",
-                      left: "0.75rem",
-                      background: "var(--gold)",
-                      color: "var(--white)",
-                      padding: "0.375rem 0.875rem",
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "0.5rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                    }}>
-                      Traditional Style
-                    </div>
-                  </div>
-                  <div style={{ padding: "1.5rem" }}>
-                    <div style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "0.5rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      color: "var(--gold)",
-                      marginBottom: "0.5rem",
-                    }}>
-                      02 / Straw
-                    </div>
-                    <h3 style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
-                      fontWeight: 700,
-                      color: "var(--ink)",
-                      marginBottom: "0.75rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "-0.01em",
-                    }}>
-                      Exotic Straw Thatch
-                    </h3>
-                    <p style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "0.875rem",
-                      color: "var(--ink-muted)",
-                      lineHeight: 1.6,
-                      marginBottom: "1.25rem",
-                    }}>
-                      The right mix of traditional style and modern durability. It has a rustic-vernacular look.
-                    </p>
-                    {/* Sub-types: Indoor / Outdoor */}
-                    <div style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "0.75rem",
-                      paddingTop: "1rem",
-                      borderTop: "1px solid var(--cream-dark)",
-                    }}>
-                      {[
-                        { name: "Outdoor", desc: "Installed on fiber cement board, OSB, corrugated metal, plywood, concrete" },
-                        { name: "Indoor", desc: "Used as false ceiling, wall panel, and other decor purposes" },
-                      ].map((sub) => (
-                        <div key={sub.name} style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.75rem",
-                          padding: "0.75rem",
-                          background: "var(--cream)",
-                        }}>
-                          <div style={{
-                            width: 8,
-                            height: 8,
-                            background: sub.color,
-                            borderRadius: "50%",
-                            flexShrink: 0,
-                          }} />
-                          <div>
-                            <div style={{
-                              fontFamily: "var(--font-heading)",
-                              fontSize: "0.875rem",
-                              fontWeight: 700,
-                              color: "var(--ink)",
-                              textTransform: "uppercase",
-                            }}>
-                              {sub.name}
-                            </div>
-                            <div style={{
-                              fontFamily: "var(--font-heading)",
-                              fontSize: "0.6875rem",
-                              color: "var(--ink-muted)",
-                            }}>
-                              {sub.desc}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <a
-                      href="#exotic-straw-thatch"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        marginTop: "1.25rem",
-                        fontFamily: "var(--font-heading)",
-                        fontSize: "0.6875rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        color: "var(--gold)",
-                        textDecoration: "none",
-                      }}
-                    >
-                      View Products
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </a>
                   </div>
                 </div>
-              </Reveal>
+              </div>
+            </Reveal>
 
-              {/* 3. REED */}
-              <Reveal>
-                <div style={{
-                  background: "var(--white)",
-                  borderTop: "4px solid var(--bark-mid)",
-                  overflow: "hidden",
-                  boxShadow: "0 4px 20px rgba(26,21,16,0.08)",
-                }}>
-                  <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden", background: "var(--cream-dark)" }}>
+            {/* 02 / REED THATCH */}
+            <Reveal>
+              <div id="exotic-reed-thatch" style={{ background: "var(--white)", borderRadius: 4, overflow: "hidden", boxShadow: "0 4px 24px rgba(26,21,16,0.08)" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 500 }}>
+                  {/* Left - Content */}
+                  <div style={{ padding: "clamp(2rem, 4vw, 3rem)" }}>
+                    <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.5rem" }}>
+                      02 / Reed Thatch
+                    </div>
+                    <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "-0.02em", marginBottom: "1rem", lineHeight: 1.1 }}>
+                      Exotic Reed Thatch
+                    </h3>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", color: "var(--ink-muted)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                      A tightly bundled design with fine vertical reeds, perfect for modern architectural designs with clean, contemporary lines.
+                    </p>
+                    {/* Color Options */}
+                    <div style={{ marginBottom: "1.5rem" }}>
+                      <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
+                        Colors Available
+                      </div>
+                      <div style={{ display: "flex", gap: "0.5rem" }}>
+                        {["#C4A35A", "#8B7355", "#654321", "#3D2B1F"].map((color, i) => (
+                          <div key={i} style={{ width: 32, height: 32, borderRadius: "50%", background: color, border: "2px solid var(--cream-dark)", cursor: "pointer" }} />
+                        ))}
+                      </div>
+                    </div>
+                    {/* Specs */}
+                    <div style={{ marginBottom: "1.5rem" }}>
+                      <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
+                        Key Specifications
+                      </div>
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+                        {[["Panel Size", "1100 × 900mm"], ["Material", "HDPE"], ["Warranty", "20 years"], ["Fire Rating", "Class A"]].map(([k, v]) => (
+                          <div key={k} style={{ background: "var(--cream)", padding: "0.5rem 0.75rem" }}>
+                            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.4375rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink-muted)" }}>{k}</div>
+                            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.625rem", fontWeight: 700, color: "var(--ink)" }}>{v}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    {/* Buttons */}
+                    <div style={{ display: "flex", gap: "0.75rem" }}>
+                      <a href="/thatch/exotic-reed-thatch" style={{ flex: 1, padding: "0.875rem 1.5rem", background: "var(--ink)", color: "var(--white)", fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                        View Full Details
+                      </a>
+                      <a href="/contact" style={{ flex: 1, padding: "0.875rem 1.5rem", background: "var(--gold)", color: "var(--white)", fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                        Get Quote
+                      </a>
+                    </div>
+                  </div>
+                  {/* Right - Image */}
+                  <div style={{ position: "relative", background: "var(--cream)" }}>
                     <img
                       src="/images/thatch/KHW Exotic Reed Thatch.jpeg"
-                      alt="Reed Thatch"
+                      alt="Exotic Reed Thatch"
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
                     />
-                    <div style={{
-                      position: "absolute",
-                      bottom: "0.75rem",
-                      left: "0.75rem",
-                      background: "var(--bark-mid)",
-                      color: "var(--white)",
-                      padding: "0.375rem 0.875rem",
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "0.5rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                    }}>
-                      Versatile
-                    </div>
-                  </div>
-                  <div style={{ padding: "1.5rem" }}>
-                    <div style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "0.5rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      color: "var(--gold)",
-                      marginBottom: "0.5rem",
-                    }}>
-                      03 / Reed
-                    </div>
-                    <h3 style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
-                      fontWeight: 700,
-                      color: "var(--ink)",
-                      marginBottom: "0.75rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "-0.01em",
-                    }}>
-                      KHW Exotic Reed Thatch
-                    </h3>
-                    <p style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "0.875rem",
-                      color: "var(--ink-muted)",
-                      lineHeight: 1.6,
-                      marginBottom: "1.25rem",
-                    }}>
-                      Luxurious layered reed strands. Perfect for gazebos, tiki huts & accent walls.
-                    </p>
-                    {/* No sub-types for Reed - just direct link */}
-                    <a
-                      href="#exotic-reed-thatch"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        marginTop: "1.25rem",
-                        fontFamily: "var(--font-heading)",
-                        fontSize: "0.6875rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        color: "var(--bark-mid)",
-                        textDecoration: "none",
-                      }}
-                    >
-                      View Products
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </a>
                   </div>
                 </div>
-              </Reveal>
-            </div>
-          </StaggerContainer>
-        </div>
+              </div>
+            </Reveal>
+
+            {/* 03 / STRAW THATCH */}
+            <Reveal>
+              <div id="exotic-straw-thatch" style={{ background: "var(--white)", borderRadius: 4, overflow: "hidden", boxShadow: "0 4px 24px rgba(26,21,16,0.08)" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 500 }}>
+                  {/* Left - Content */}
+                  <div style={{ padding: "clamp(2rem, 4vw, 3rem)" }}>
+                    <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.5rem" }}>
+                      03 / Straw Thatch
+                    </div>
+                    <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "-0.02em", marginBottom: "1rem", lineHeight: 1.1 }}>
+                      Exotic Straw Thatch
+                    </h3>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", color: "var(--ink-muted)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                      Offers the authentic look of freshly cut straw with a warm, natural golden hue, ideal for creating a rustic tropical atmosphere.
+                    </p>
+                    {/* Color Options */}
+                    <div style={{ marginBottom: "1.5rem" }}>
+                      <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
+                        Colors Available
+                      </div>
+                      <div style={{ display: "flex", gap: "0.5rem" }}>
+                        {["#D4B896", "#C4A35A", "#8B7355", "#654321"].map((color, i) => (
+                          <div key={i} style={{ width: 32, height: 32, borderRadius: "50%", background: color, border: "2px solid var(--cream-dark)", cursor: "pointer" }} />
+                        ))}
+                      </div>
+                    </div>
+                    {/* Specs */}
+                    <div style={{ marginBottom: "1.5rem" }}>
+                      <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.5rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-muted)", marginBottom: "0.75rem" }}>
+                        Key Specifications
+                      </div>
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+                        {[["Panel Size", "1100 × 900mm"], ["Material", "HDPE"], ["Warranty", "20 years"], ["Fire Rating", "Class A"]].map(([k, v]) => (
+                          <div key={k} style={{ background: "var(--cream)", padding: "0.5rem 0.75rem" }}>
+                            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.4375rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink-muted)" }}>{k}</div>
+                            <div style={{ fontFamily: "var(--font-heading)", fontSize: "0.625rem", fontWeight: 700, color: "var(--ink)" }}>{v}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    {/* Buttons */}
+                    <div style={{ display: "flex", gap: "0.75rem" }}>
+                      <a href="/thatch/exotic-straw-thatch" style={{ flex: 1, padding: "0.875rem 1.5rem", background: "var(--ink)", color: "var(--white)", fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                        View Full Details
+                      </a>
+                      <a href="/contact" style={{ flex: 1, padding: "0.875rem 1.5rem", background: "var(--gold)", color: "var(--white)", fontFamily: "var(--font-heading)", fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                        Get Quote
+                      </a>
+                    </div>
+                  </div>
+                  {/* Right - Image */}
+                  <div style={{ position: "relative", background: "var(--cream)" }}>
+                    <img
+                      src="/images/thatch/Exotic Straw Thatch.jpeg"
+                      alt="Exotic Straw Thatch"
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+          </div>
       </section>
 
       {/* ─── STICKY MINI NAV ─────────────────────────────────────────── */}
@@ -703,24 +523,6 @@ export default function ThatchPage() {
               transition: "color 0.2s, border-color 0.2s",
             }}>
               <span style={{ color: "var(--gold)", fontSize: "0.75rem" }}>03</span> Straw Thatch
-            </a>
-            <a href="#folding-reed-shingles" style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              padding: "0.875rem 1.25rem",
-              fontFamily: "var(--font-heading)",
-              fontSize: "0.5rem",
-              fontWeight: 700,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "rgba(248,243,236,0.5)",
-              textDecoration: "none",
-              borderBottom: "2px solid transparent",
-              whiteSpace: "nowrap",
-              transition: "color 0.2s, border-color 0.2s",
-            }}>
-              <span style={{ color: "var(--gold)", fontSize: "0.75rem" }}>04</span> Folding Shingles
             </a>
             <a href="/#gallery" style={{
               display: "flex",

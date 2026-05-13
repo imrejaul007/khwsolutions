@@ -23,16 +23,15 @@ export default function PalmThatchPage() {
 
   return (
     <>
-      {/* Splash label fixed on left side */}
+      {/* Splash label fixed on left edge */}
       <img
         src="/images/thatch/palm-thatch-splash.png"
         alt="Product Info"
         style={{
           position: "fixed",
           left: 0,
-          top: "50%",
-          transform: "translateY(-50%)",
-          width: "clamp(60px, 8vw, 100px)",
+          top: "30%",
+          width: "clamp(50px, 6vw, 80px)",
           height: "auto",
           zIndex: 100,
         }}

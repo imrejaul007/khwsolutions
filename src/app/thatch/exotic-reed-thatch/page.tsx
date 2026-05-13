@@ -18,7 +18,7 @@ export default function ReedThatchPage() {
   // Get image based on color
   const getImageSrc = () => {
     const colorName = selectedColor.name.toLowerCase().replace(" ", "-");
-    return `/images/thatch/reed-thatch-${colorName}.png`;
+    return `/images/thatch/KHW Exotic Reed Thatch.jpeg`;
   };
 
   const panelTypes = [

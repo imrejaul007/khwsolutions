@@ -13,9 +13,9 @@ const PRODUCT_IMAGES: Record<string, string[]> = {
     "/images/thatch/palm-thatch-splash.png",
   ],
   "exotic-reed-thatch": [
-    "/images/thatch/reed-thatch-splash.png",
-    "/images/thatch/reed-thatch-detail.png",
-    "/images/thatch/palm-thatch-hero.png",
+    "/images/thatch/KHW Exotic Reed Thatch.jpeg",
+    "/images/thatch/KHW Exotic Reed Thatch.jpeg",
+    "/images/thatch/KHW Exotic Reed Thatch.jpeg",
   ],
   "exotic-straw-thatch": [
     "/images/thatch/straw-thatch-splash.png",

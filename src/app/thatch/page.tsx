@@ -548,7 +548,7 @@ export default function ThatchPage() {
                 }}>
                   <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden", background: "var(--cream-dark)" }}>
                     <img
-                      src="/images/thatch/reed-thatch-hero.png"
+                      src="/images/thatch/KHW Exotic Reed Thatch.jpeg"
                       alt="Reed Thatch"
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       onError={(e) => {
